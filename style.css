@@ -45,32 +45,32 @@
 h1 {
     font-family: "Yeseva One";
     font-weight: 400;
-    font-size: 400px;
+    font-size: clamp(7.813rem, 1.761rem + 19.366vw, 25rem);
     text-transform: uppercase;
 }
 
 h2 {
     font-family: "Raleway";
     font-weight: 600;
-    font-size: 92px;
+    font-size: clamp(3.875rem, 3.215rem + 2.113vw, 5.75rem);
 }
 
 h3 {
     font-family: "Yeseva One";
     font-weight: 200;
-    font-size: 76px;
+    font-size: clamp(3.125rem, 2.553rem + 1.831vw, 4.75rem);
 }
 
 h4 {
     font-family: "Raleway";
     font-weight: 700;
-    font-size: 38px;
+    font-size: clamp(1.625rem, 1.361rem + 0.845vw, 2.375rem);
 }
 
 p {
     font-family: "Lato";
     font-weight: 400;
-    font-size: 20px;
+    font-size: clamp(0.875rem, 0.743rem + 0.423vw, 1.25rem);
 }
 
 .btn-general {
@@ -82,7 +82,6 @@ p {
     height: 42px;
     font-family: "Lato", sans-serif;
     font-weight: 700;
-    font-size: 20px;
     color: var(--dark);
     text-decoration: none;
     cursor: pointer;
@@ -125,7 +124,6 @@ p {
     height: 42px;
     font-family: "Lato", sans-serif;
     font-weight: 700;
-    font-size: 20px;
     color: var(--light);
     text-decoration: none;
     cursor: pointer;
@@ -184,10 +182,17 @@ body {
         & ul {
             display: flex;
             justify-content: center;
+            align-items: center;
+            /* Fix vertical alignment */
             gap: 60px;
             list-style: none;
 
             & li {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                /* Ensure full height if needed */
+
                 & a {
                     text-decoration: none;
                     color: var(--light);
@@ -196,6 +201,10 @@ body {
                     font-size: 14px;
                     letter-spacing: 1px;
                     text-transform: uppercase;
+                    display: flex;
+                    /* Flex here too */
+                    align-items: center;
+                    height: 100%;
                 }
             }
         }
@@ -449,9 +458,7 @@ body {
         font-family: 'Yeseva One', serif;
         font-size: 60px;
         color: var(--dark-light);
-        margin-bottom: 0;
         text-transform: uppercase;
-        letter-spacing: 2px;
     }
 
     & .final-title {
@@ -459,6 +466,7 @@ body {
         margin: 0;
         line-height: 1;
         z-index: 1;
+        padding-bottom: 0rem;
     }
 
     & img {
@@ -466,6 +474,8 @@ body {
         z-index: 2;
         position: relative;
         display: block;
+        width: clamp(30rem, 15.915rem + 45.07vw, 70rem);
+        height: auto;
     }
 }
 
@@ -501,7 +511,6 @@ footer {
                     text-decoration: none;
                     color: var(--light);
                     text-transform: uppercase;
-                    font-size: 24px;
                     letter-spacing: 1px;
                 }
             }
@@ -516,8 +525,6 @@ footer {
             & h2 {
                 color: var(--light);
                 text-transform: uppercase;
-                line-height: 1.1;
-                font-size: 80px;
                 margin: 0;
             }
 
@@ -538,7 +545,6 @@ footer {
                         color: var(--light);
                         font-family: 'Lato', sans-serif;
                         font-weight: 400;
-                        font-size: 18px;
 
                         & img {
                             width: 24px;
@@ -561,7 +567,7 @@ footer {
         display: flex;
         justify-content: space-between;
         font-family: 'Lato', sans-serif;
-        font-size: 14px;
+        font-family: 'Lato', sans-serif;
         color: rgba(238, 240, 230, 0.6);
 
         & .legal-links {
@@ -591,8 +597,15 @@ footer {
 .header-contact nav ul {
     display: flex;
     justify-content: center;
+    align-items: center;
+    /* Fix vertical alignment */
     gap: 60px;
     list-style: none;
+}
+
+.header-contact nav ul li {
+    display: flex;
+    align-items: center;
 }
 
 .header-contact nav ul li a {
@@ -603,6 +616,8 @@ footer {
     font-size: 14px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -610,23 +625,25 @@ footer {
 .contact-main {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    /* Two rows: Title area, Details area */
     padding: 0 60px 100px 60px;
     gap: 60px;
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
+    align-items: start;
 }
 
 .contact-left {
     display: flex;
     flex-direction: column;
     min-width: 0;
-    /* Prevent grid blowout from huge text */
+    grid-column: 1;
+    grid-row: 1;
 }
 
 .contact-title {
-    font-family: "Yeseva One", serif;
-    font-size: 350px;
     line-height: 0.75;
     color: var(--dark);
     margin: 0;
@@ -634,15 +651,19 @@ footer {
     margin-bottom: 2.5rem;
     text-transform: uppercase;
     font-weight: 400;
+    font-size: clamp(6rem, -0.69rem + 21.408vw, 25rem);
 }
 
 .us-title {
     margin-bottom: 60px;
+    font-size: clamp(6rem, -0.69rem + 21.408vw, 25rem);
 }
 
 .contact-details {
     margin-top: 40px;
     padding-right: 50px;
+    grid-column: 1;
+    grid-row: 2;
 }
 
 .contact-desc {
@@ -678,7 +699,10 @@ footer {
 /* Contact Form Right Side */
 .contact-right {
     padding-top: 400px;
+    /* Align visually with where content starts or center */
     padding-left: 0;
+    grid-column: 2;
+    grid-row: 1 / span 2;
 }
 
 .contact-form {
@@ -760,11 +784,7 @@ footer {
 
 
 
-@media (min-width: 1600px) {
-    .contact-title {
-        font-size: 400px;
-    }
-}
+
 
 @keyframes scroll-left {
     from {
@@ -829,6 +849,8 @@ footer {
 .header-routes nav ul {
     display: flex;
     justify-content: center;
+    align-items: center;
+    /* Fix vertical alignment */
     gap: 60px;
     list-style: none;
 }
@@ -931,25 +953,11 @@ footer {
 }
 
 /* Responsive adjustments */
-@media (max-width: 1200px) {
-    .routes-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .routes-title {
-        font-size: 150px;
-    }
-
-
-}
 
 
 
-@media (min-width: 1600px) {
-    .contact-title {
-        font-size: 400px;
-    }
-}
+
+
 
 @keyframes scroll-left {
     from {
@@ -1014,6 +1022,8 @@ footer {
 .header-routes nav ul {
     display: flex;
     justify-content: center;
+    align-items: center;
+    /* Fix vertical alignment */
     gap: 60px;
     list-style: none;
 }
@@ -1026,6 +1036,8 @@ footer {
     font-size: 14px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
 }
 
 .routes-container {
@@ -1046,6 +1058,7 @@ footer {
     white-space: normal;
     /* Allow wrapping if needed but mostly just show it */
     overflow: visible;
+    font-size: clamp(6.25rem, -0.352rem + 21.127vw, 25rem);
 }
 
 /* Responsive Grid */
@@ -1124,21 +1137,7 @@ footer {
     margin-bottom: 0 !important;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .routes-grid {
-        grid-template-columns: 1fr;
-    }
 
-    .routes-title {
-        font-size: 150px;
-    }
-
-    .route-col.center {
-        order: -1;
-        margin-bottom: 40px;
-    }
-}
 
 /* Stats Section Styles */
 .routes-stats {
@@ -1173,21 +1172,7 @@ footer {
     text-align: right;
 }
 
-@media (max-width: 1024px) {
-    .routes-stats {
-        flex-wrap: wrap;
-        gap: 50px;
-        justify-content: center;
-    }
 
-    .stat-item {
-        align-items: center;
-    }
-
-    .stat-label {
-        text-align: center;
-    }
-}
 
 /* Itineraries Section */
 .itineraries-section {
@@ -1327,31 +1312,7 @@ footer {
     margin-right: 20px;
 }
 
-@media (max-width: 1024px) {
-    .itineraries-header h2 {
-        font-size: 50px;
-    }
 
-    .itinerary-card {
-        height: auto;
-        min-height: 600px;
-    }
-
-    .card-top {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-
-
-    .timeline-row {
-        flex-wrap: wrap;
-    }
-
-    .card-meta {
-        flex-wrap: wrap;
-    }
-}
 
 /* Custom Route Section */
 .custom-route-section {
@@ -1417,23 +1378,7 @@ footer {
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 1024px) {
-    .custom-route-content {
-        grid-template-columns: 1fr;
-        gap: 80px;
-    }
 
-    .custom-route-text {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .custom-route-images {
-        height: 500px;
-    }
-}
 
 /* Destination Page Styles */
 .header-destination {
@@ -1445,8 +1390,15 @@ footer {
 .header-destination nav ul {
     display: flex;
     justify-content: center;
+    align-items: center;
+    /* Fix vertical alignment */
     gap: 60px;
     list-style: none;
+}
+
+.header-destination nav ul li {
+    display: flex;
+    align-items: center;
 }
 
 .header-destination nav ul li a {
@@ -1457,6 +1409,8 @@ footer {
     font-size: 14px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
 }
 
 .destination-container {
@@ -1478,6 +1432,7 @@ footer {
     overflow: visible;
     margin-left: -60px;
     width: calc(100% + 120px);
+    font-size: clamp(6.25rem, -0.352rem + 21.127vw, 25rem);
 }
 
 .destination-intro-grid {
@@ -1489,7 +1444,6 @@ footer {
 }
 
 .intro-left h2 {
-    font-size: 80px;
     line-height: 1.1;
     color: var(--dark);
     margin: 0;
@@ -1517,15 +1471,7 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
-    .destination-intro-grid {
-        grid-template-columns: 1fr;
-    }
 
-    .destination-title {
-        font-size: 150px;
-    }
-}
 
 .destination-grid {
     display: grid;
@@ -1623,24 +1569,7 @@ footer {
     height: 100% !important;
 }
 
-@media (max-width: 1024px) {
-    .destination-grid {
-        grid-template-columns: 1fr;
-        grid-auto-rows: auto;
-    }
 
-    .item-1,
-    .item-2,
-    .item-3,
-    .item-4,
-    .item-5,
-    .item-6,
-    .item-7 {
-        grid-column: auto;
-        grid-row: auto;
-        height: 500px !important;
-    }
-}
 
 .parties-section {
     margin-top: 150px;
@@ -1657,12 +1586,7 @@ footer {
     color: rgba(0, 0, 0, 0.4);
 }
 
-@media (max-width: 1200px) {
-    .parties-section h2 {
-        font-size: 50px;
-    }
 
-}
 
 
 
@@ -1765,31 +1689,7 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-    .events-editorial {
-        flex-direction: column;
-        height: auto;
-    }
 
-    .ed-card {
-        height: 400px;
-        flex: none !important;
-        border-right: none;
-        border-bottom: 1px solid #fff;
-    }
-
-    .ed-content {
-        transform: translateY(0);
-        /* Always show content on mobile */
-        padding: 20px;
-    }
-
-    .ed-desc {
-        height: auto !important;
-        opacity: 1 !important;
-        margin-bottom: 10px;
-    }
-}
 
 /* Consult Experts Section */
 .consult-experts {
@@ -1850,21 +1750,7 @@ footer {
     text-transform: none;
 }
 
-@media (max-width: 1024px) {
-    .consult-experts {
-        grid-template-columns: 1fr;
-        gap: 60px;
-        margin-top: 100px;
-    }
 
-    .consult-images {
-        height: 500px;
-    }
-
-    .consult-content {
-        padding-right: 0;
-    }
-}
 
 /* Shared Nav Link Animations */
 header nav ul li a,
@@ -1894,4 +1780,872 @@ header nav ul li a:hover::after,
 header nav ul li a:hover,
 .footer-nav h4 a:hover {
     opacity: 0.8;
+}
+
+/* =========================================
+   RESPONSIVE STYLES
+   ========================================= */
+
+/* --- Overview Section (Header Content) --- */
+
+@media (max-width: 1600px) {
+    .final-section img {
+        margin-top: -200px;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    /* --- Events Editorial Section Responsive (Desktop Layout Breakpoint) --- */
+    .events-editorial {
+        display: flex;
+        height: auto;
+        flex-wrap: wrap;
+        margin-top: 50px;
+    }
+
+    .ed-card {
+        flex: 0 0 50%;
+        height: 500px;
+        width: 50%;
+        min-width: 50%;
+        /* Force 2-column wrapping even when JS animates flex */
+    }
+}
+
+@media (max-width: 1400px) {
+    .final-section {
+
+        & img {
+            margin-top: -180px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-index {
+        background-image: none;
+        background-color: var(--light);
+        position: relative;
+        height: auto;
+        min-height: auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Create the hero background image "cut" */
+    .header-index::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70vh;
+        background-image: url("./img-true/hero-index.png");
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+    }
+
+    .header-index nav {
+        padding: 30px;
+        padding-bottom: 0;
+        position: relative;
+        z-index: 1002;
+        /* Ensure higher than header background pseudo-element and h1 */
+    }
+
+    .header-index h1 {
+        position: relative;
+        z-index: 2;
+        height: 70vh;
+        /* Occupy the image area */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 0;
+        margin-top: -80px;
+        /* Offset for nav to center visually */
+    }
+
+    .header-index .header-content {
+        position: relative;
+        z-index: 2;
+        background-color: var(--light);
+        color: var(--dark);
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+        padding: 60px 40px 100px 40px;
+        margin-top: 0;
+    }
+
+    /* Reset text colors inside content since we are now on light bg */
+    .header-index .header-content p,
+    .header-index .header-content h4 {
+        color: var(--dark);
+    }
+
+    .header-index .header-content h4 {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    .header-index .header-content .description-left,
+    .header-index .header-content .description-right {
+        text-align: center;
+        max-width: 100%;
+        justify-self: center;
+        margin: 0 auto;
+    }
+
+    /* --- Wonders Section (Responsive Cards) --- */
+    .explore-wonders {
+        padding: 50px 30px;
+    }
+
+    .explore-wonders .wonder-card {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        margin-bottom: 100px;
+    }
+
+    /* Reset margin-top for reverse card, since we now stack vertically */
+    .explore-wonders .wonder-card.reverse {
+        margin-top: 0;
+    }
+
+    .explore-wonders .wonder-card>img {
+        width: 100%;
+        height: 60vh;
+        /* Maintain impact but fit screen */
+        min-height: 400px;
+        max-height: 600px;
+    }
+
+    /* Reorder content for reverse card: Image first, then Text */
+    .explore-wonders .wonder-card.reverse>img {
+        order: -1;
+    }
+
+    .explore-wonders .wonder-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Override specific text alignments */
+    .explore-wonders .wonder-card .wonder-content h3 {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: center !important;
+        /* Force reduce gap between title and subtitle */
+        margin-bottom: 50px !important;
+    }
+
+    /* Fix specificity issue for reverse card alignment */
+    .explore-wonders .wonder-card.reverse .wonder-content {
+        align-items: center;
+        /* Override desktop flex-end */
+    }
+
+    .explore-wonders .wonder-card.reverse .wonder-content h3 {
+        align-self: center;
+        margin-bottom: 50px;
+    }
+
+    .explore-wonders .wonder-content h4,
+    .explore-wonders .wonder-content p {
+        text-align: center !important;
+    }
+
+    .explore-wonders .wonder-card.reverse .wonder-content p,
+    .explore-wonders .wonder-card.reverse .wonder-content h4 {
+        text-align: center !important;
+        /* Ensure the element itself is centered if width < 100% */
+        align-self: center;
+    }
+
+    .explore-wonders .iguazu-falls {
+        margin-top: 50px;
+        margin-bottom: 100px;
+        position: relative;
+        display: flex;
+        flex-direction: column-reverse;
+        /* Image bottom, Text top (or similar structure to others if needed, but original had text over image) */
+        /* Let's make it stack like others: Image then Text below, or Text above then Image.
+           Original design was Image full width with Text absolute over it.
+           For responsive easier read: Image, then Text block below it (or above).
+           Let's match the cards: Image, then Content below. */
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .explore-wonders .iguazu-falls>img {
+        height: 50vh;
+        min-height: 400px;
+        object-fit: cover;
+    }
+
+    .explore-wonders .iguazu-falls .iguazu-content {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .explore-wonders .iguazu-falls .iguazu-content h3 {
+        color: var(--dark);
+        /* Ensure visibility on white bg */
+        margin-bottom: 30px;
+    }
+
+    .explore-wonders .iguazu-falls .iguazu-content p {
+        color: var(--dark);
+        margin: 0 auto;
+    }
+
+    /* --- Connect Routes Section --- */
+    .connect-routes {
+        padding: 50px 30px;
+    }
+
+    .connect-routes h2 {
+        text-align: left;
+        /* Align to the left like Explore Wonders */
+        margin-bottom: 60px;
+        /* Adjust size for mobile */
+    }
+
+    /* Responsive Grid */
+    .connect-routes .grid-gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* Single column stack */
+        grid-template-rows: auto;
+        /* Allow auto scaling */
+        gap: 20px;
+        height: auto;
+    }
+
+    .connect-routes .grid-gallery .grid-item {
+        height: 300px;
+        /* Uniform height */
+        grid-column: auto !important;
+        /* Reset grid positioning */
+        grid-row: auto !important;
+    }
+
+    /* Fix for tall images: Give them more height so they aren't cut off */
+    .connect-routes .grid-gallery .grid-item.grid-img-3,
+    .connect-routes .grid-gallery .grid-item.grid-img-4 {
+        height: 550px;
+    }
+
+
+    .final-section {
+
+        & img {
+            margin-top: -140px;
+        }
+    }
+
+    /* --- Destination Page Responsive --- */
+    .destination-container {
+        padding: 0 30px 100px 30px;
+    }
+
+    .destination-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        margin-bottom: 80px;
+    }
+
+    .destination-intro-grid .intro-left h2 {
+        text-align: left;
+    }
+
+    .destination-intro-grid .intro-right {
+        align-items: center;
+        text-align: center;
+    }
+
+    .destination-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-auto-rows: minmax(500px, auto);
+        gap: 30px;
+    }
+
+    /* Reset grid placements for single column */
+    .item-1,
+    .item-2,
+    .item-3,
+    .item-4,
+    .item-5,
+    .item-6,
+    .item-7 {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    /* Specific adjustments for items that were spanning */
+    .item-1 {
+        height: 600px;
+    }
+
+    .item-4 {
+        height: 500px;
+    }
+
+    .item-7 {
+        height: 600px !important;
+    }
+
+    /* Adjust overlay position */
+    .dest-overlay {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 90%;
+        text-align: center;
+    }
+
+    /* --- Consult Experts Section (Tablet Adjustment) --- */
+    .consult-experts {
+        /* Keep grid but reduce gap */
+        gap: 60px;
+        margin-top: 150px;
+        padding: 0 40px;
+        grid-template-columns: 1fr 1fr;
+        /* Maintain horizontal */
+    }
+
+    .consult-images {
+        height: 500px;
+        /* Slightly smaller height */
+    }
+
+    /* Routes responsive moved to 1300px query */
+
+    .routes-stats {
+        padding: 80px 30px;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+    }
+
+    .stat-item {
+        align-items: center;
+        flex: 1 1 40%;
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 50px;
+    }
+
+    .stat-label {
+        text-align: center;
+    }
+
+    /* Itineraries */
+    .itineraries-section {
+        padding: 20px 30px 40px 30px;
+    }
+
+    .itinerary-card {
+        height: auto;
+        min-height: 600px;
+        padding-bottom: 20px;
+    }
+
+    .card-content {
+        padding: 30px;
+    }
+
+    .card-top {
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 30px;
+    }
+
+    .card-meta,
+    .timeline-row {
+        flex-wrap: wrap;
+    }
+
+    .card-desc,
+    .card-details {
+        max-width: 100%;
+    }
+
+    .action-line {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .consult-experts {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        margin-top: 200px;
+        padding: 0;
+    }
+
+    .consult-images {
+        width: 100%;
+        height: 450px;
+        position: relative;
+    }
+
+    .consult-img-back {
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 60%;
+        object-fit: cover;
+    }
+
+    .consult-img-front {
+        bottom: 0;
+        right: 0;
+        width: 85%;
+        height: 70%;
+        object-fit: cover;
+    }
+
+    .consult-content {
+        padding-right: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .consult-content h3 {
+        text-align: center;
+    }
+
+    /* --- Custom Route Section (Routes Page) --- */
+    .custom-route-section {
+        padding: 50px 30px;
+    }
+
+    .custom-route-content {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .custom-route-text {
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .custom-route-text p {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 24px;
+    }
+
+    .custom-route-images {
+        height: 450px;
+    }
+
+    .c-img-back {
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 60%;
+    }
+
+    .c-img-front {
+        bottom: 0;
+        left: 0;
+        width: 85%;
+        height: 70%;
+    }
+
+    .custom-route-title {
+        font-size: 50px;
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    /* --- Footer --- */
+    footer {
+        padding: 80px 40px;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+        text-align: center;
+        padding-bottom: 60px;
+    }
+
+    footer .footer-content .footer-logo {
+        width: 200px;
+    }
+
+    footer .footer-nav {
+        gap: 20px;
+    }
+
+    footer .footer-cta {
+        margin-left: 0;
+        align-items: center;
+        width: 100%;
+    }
+
+    footer .footer-cta h2 {
+        margin-bottom: 30px;
+    }
+
+    footer .footer-cta .footer-actions {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    footer .footer-bottom {
+        flex-direction: column-reverse;
+        /* Put links above copyright or just stack */
+        gap: 30px;
+        text-align: center;
+    }
+
+    footer .footer-bottom .legal-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .final-section img {
+        margin-top: -100px;
+    }
+
+    footer .footer-cta h2 {
+        font-size: 28px;
+    }
+}
+
+/* --- Contact Page Responsive --- */
+@media (max-width: 1024px) {
+    .contact-main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        /* Reset explicit rows */
+        padding: 0 30px 60px 30px;
+        gap: 60px;
+    }
+
+    .contact-left,
+    .contact-right,
+    .contact-details {
+        grid-column: auto;
+        grid-row: auto;
+        padding: 0;
+        margin: 0;
+    }
+
+    .contact-right {
+        padding-top: 0;
+        /* Ensure form comes after title but before details or after? 
+           Based on HTML order: Title (Left) -> Form (Right) -> Details (Details div is after form in old HTML, wait)
+           Wait, in the NEW HTML I wrote in step 381:
+           Left (Title) -> Right (Form) -> Details.
+           So natural stack is correct: Title -> Form -> Details.
+        */
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .contact-title {
+        /* Smaller but still big */
+        margin-left: 0;
+        line-height: 0.8;
+    }
+
+    .us-title {
+        margin-left: 0;
+    }
+
+    .contact-form {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-title {}
+
+    .scrolling-gallery {
+        padding: 60px 0;
+    }
+
+    .scroll-row img {
+        height: 200px;
+        width: 300px;
+    }
+}
+
+/* --- Responsive Navigation --- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    /* Explicit gap */
+    width: 40px;
+    /* Slightly wider click area */
+    height: 40px;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+    padding: 10px 5px;
+    /* Click area padding */
+    margin-right: 0;
+}
+
+.hamburger span {
+    display: block;
+    height: 2px;
+    /* Thinner elegant lines */
+    width: 100%;
+    background-color: var(--dark);
+    border-radius: 4px;
+    transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    /* Bouncy transition */
+    transform-origin: center;
+}
+
+/* Index header has dark background image, so light hamburger */
+.header-index .hamburger span {
+    background-color: var(--light);
+}
+
+/* Active State for Hamburger (X shape) */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background-color: var(--dark);
+    /* Force dark on active (menu is light) */
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+    /* Slide out effect */
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: var(--dark);
+}
+
+@media (max-width: 1024px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .header-index nav,
+    .header-destination nav,
+    .header-routes nav,
+    .header-contact nav {
+        display: flex;
+        justify-content: flex-end;
+        /* Push hamburger to right */
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Mobile Menu Overlay */
+    .header-index nav ul,
+    .header-destination nav ul,
+    .header-routes nav ul,
+    .header-contact nav ul {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(238, 240, 230, 0.98);
+        /* Slight transparency */
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+        z-index: 1000;
+        transform: none;
+        /* No slide, using fade for elegance */
+        padding: 0;
+        margin: 0;
+    }
+
+    .header-index nav ul.active,
+    .header-destination nav ul.active,
+    .header-routes nav ul.active,
+    .header-contact nav ul.active {
+        opacity: 1;
+        visibility: visible;
+        display: flex;
+        transform: none;
+    }
+
+    /* Mobile Links */
+    /* Reset list item styles for mobile */
+    .header-index nav ul li,
+    .header-destination nav ul li,
+    .header-routes nav ul li,
+    .header-contact nav ul li {
+        height: auto;
+    }
+
+    /* Mobile Links */
+    .header-index nav ul li a,
+    .header-destination nav ul li a,
+    .header-routes nav ul li a,
+    .header-contact nav ul li a {
+        font-family: "Yeseva One", serif;
+        font-size: 40px;
+        color: var(--dark) !important;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: color 0.3s ease;
+        text-decoration: none !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        background: none !important;
+    }
+
+    .header-index nav ul li a:hover,
+    .header-destination nav ul li a:hover,
+    .header-routes nav ul li a:hover,
+    .header-contact nav ul li a:hover {
+        color: rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .header-contact nav ul li a:hover {
+        color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* --- Stats and Layout Adjustments (Wider support) --- */
+@media (max-width: 1300px) {
+    .routes-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 80px 30px;
+        gap: 60px 40px;
+        justify-items: center;
+    }
+
+    .stat-item {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        flex: none;
+        /* Override flex if inherited */
+    }
+
+
+
+    .stat-label {
+        text-align: center;
+    }
+
+    /* Moved from 1024px: Trigger grid earlier (1300px) */
+    .routes-container {
+        padding: 0 30px 100px 30px;
+    }
+
+    /* Change to 2-column + Top Hero Grid */
+    .routes-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    /* Center (Image) goes to top full width */
+    .route-col.center {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        margin-bottom: 60px;
+        align-items: center;
+    }
+
+    .route-col.center img {
+        max-width: 80%;
+        /* Controlled width */
+        margin: 0 auto;
+    }
+
+    /* Side columns sit below */
+    .route-col.left,
+    .route-col.right {
+        grid-row: 2;
+    }
+
+    .route-col.left {
+        padding-right: 20px;
+    }
+
+    .route-col.right {
+        padding-left: 20px;
+    }
+
+    .route-col.left .route-img-wrapper,
+    .route-col.right .route-img-wrapper {
+        margin-top: 40px;
+        /* Reset huge margin */
+        margin-left: 0;
+    }
+
+    .route-col h2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Full stack on smaller screens */
+    .routes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .route-col.center img {
+        max-width: 100%;
+    }
+
+    .route-col.left,
+    .route-col.right {
+        padding: 0;
+        grid-row: auto;
+        /* Reset explicit row */
+    }
+}
+
+@media (max-width: 600px) {
+    .routes-stats {
+        grid-template-columns: 1fr;
+    }
 }

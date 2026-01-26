@@ -79,22 +79,23 @@ buttons.forEach(btn => {
 // Events Section Animations
 const eventCards = document.querySelectorAll('.ed-card');
 const eventsContainer = document.querySelector('.events-editorial');
-let mm = gsap.matchMedia();
 
-mm.add("(min-width: 1025px)", () => {
-    // Desktop Setup
+// Create a matchMedia specifically for this interaction
+let mmEvents = gsap.matchMedia();
 
-    // Initial State
+mmEvents.add("(min-width: 769px)", () => {
+    // Apply accordion effect for desktop and tablet (4-col and 2-col layouts)
+    // We rely on CSS min-width: 50% for .ed-card in the 2-col range to ensure wrapping,
+    // while flex: 1 (basis 0) allows items to grow/shrink within their row.
     gsap.set(eventCards, { flex: 1 });
 
-    // Define Handlers
     const handleCardEnter = (e) => {
         const card = e.currentTarget;
         const desc = card.querySelector('.ed-desc');
 
         // Active Card
         gsap.to(card, {
-            flex: 1.7, // Reduced expansion to prevent "descuadre"
+            flex: 2, // Grow more to emphasize
             duration: 0.45,
             ease: "power2.out"
         });
@@ -111,7 +112,7 @@ mm.add("(min-width: 1025px)", () => {
         eventCards.forEach(c => {
             if (c !== card) {
                 gsap.to(c, {
-                    flex: 1, // Keep siblings readable, don't shrink them aggressively
+                    flex: 1, // Shrink slightly
                     duration: 0.45,
                     ease: "power2.out"
                 });
@@ -122,6 +123,7 @@ mm.add("(min-width: 1025px)", () => {
     };
 
     const handleContainerLeave = () => {
+        // Reset to equal distribution
         gsap.to(eventCards, {
             flex: 1,
             duration: 0.45,
@@ -136,7 +138,7 @@ mm.add("(min-width: 1025px)", () => {
     // Attach Listeners
     eventCards.forEach(card => {
         const desc = card.querySelector('.ed-desc');
-        gsap.set(desc, { height: 0, opacity: 0, marginBottom: 0 }); // Ensure initial state
+        gsap.set(desc, { height: 0, opacity: 0, marginBottom: 0 });
         card.addEventListener('mouseenter', handleCardEnter);
     });
 
@@ -144,19 +146,24 @@ mm.add("(min-width: 1025px)", () => {
         eventsContainer.addEventListener('mouseleave', handleContainerLeave);
     }
 
-    // Cleanup
+    // Cleanup when screen size changes to smaller (<769px)
     return () => {
+        // Remove listeners
         eventCards.forEach(card => {
             card.removeEventListener('mouseenter', handleCardEnter);
-            gsap.set(card, { clearProps: "all" });
-            const desc = card.querySelector('.ed-desc');
-            gsap.set(desc, { clearProps: "all" });
         });
         if (eventsContainer) {
             eventsContainer.removeEventListener('mouseleave', handleContainerLeave);
         }
+        // Reset styles set by GSAP to allow CSS to take over
+        gsap.set(eventCards, { clearProps: "flex" });
+        const allDescs = document.querySelectorAll('.ed-desc');
+        gsap.set(allDescs, { clearProps: "height,opacity,marginBottom" });
     };
 });
+// On smaller screens, we can perhaps just show the description always or rely on CSS hover if needed.
+// For now, let CSS handle layout (flex-wrap: wrap, width: 50% etc).
+
 
 // Nav Entrance Animation
 const navLinks = document.querySelectorAll('header nav ul li a');
@@ -177,11 +184,14 @@ gsap.registerPlugin(ScrollTrigger);
 // 1. General Title & Text Fade Up
 const fadeElements = document.querySelectorAll('h2, h3, p.intro-text, .destination-intro-grid p');
 fadeElements.forEach(el => {
+    // Skip if element is inside dest-overlay or ed-content (we animate the whole container instead)
+    if (el.closest('.dest-overlay') || el.closest('.ed-content')) return;
+
     gsap.from(el, {
         scrollTrigger: {
             trigger: el,
             start: "top 85%",
-            toggleActions: "play none none reverse"
+            toggleActions: "play none none none"
         },
         y: 40,
         opacity: 0,
@@ -190,39 +200,99 @@ fadeElements.forEach(el => {
     });
 });
 
-// 2. Image Reveal (Scale Up)
-const revealImages = document.querySelectorAll('.wonder-card > img, .iguazu-falls > img, .intro-right img, .dest-item img');
-revealImages.forEach(img => {
-    gsap.from(img, {
-        scrollTrigger: {
-            trigger: img,
-            start: "top 90%",
-            toggleActions: "play none none reverse"
-        },
-        scale: 0.95,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out"
+// Responsive Animations using MatchMedia
+let mmGlobal = gsap.matchMedia();
+
+mmGlobal.add("(min-width: 769px)", () => {
+    // DESKTOP / TABLET ANIMATIONS
+
+    // 2. Image Reveal (Scale Up) - Desktop
+    const revealImages = document.querySelectorAll('.wonder-card > img, .iguazu-falls > img, .intro-right img');
+    revealImages.forEach(img => {
+        gsap.from(img, {
+            scrollTrigger: {
+                trigger: img,
+                start: "top 90%",
+                toggleActions: "play none none none"
+            },
+            scale: 0.95,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out"
+        });
+    });
+
+    // 3. Stagger Grids (Routes, Gallery) - Desktop
+    const grids = document.querySelectorAll('.grid-gallery');
+    grids.forEach(grid => {
+        const items = grid.querySelectorAll('.grid-item, .dest-item');
+        if (items.length > 0) {
+            gsap.from(items, {
+                scrollTrigger: {
+                    trigger: grid,
+                    start: "top 80%"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "power3.out"
+            });
+        }
     });
 });
 
-// 3. Stagger Grids (Routes, Gallery)
-const grids = document.querySelectorAll('.grid-gallery, .destination-grid');
-grids.forEach(grid => {
-    const items = grid.querySelectorAll('.grid-item, .dest-item');
-    if (items.length > 0) {
-        gsap.from(items, {
+mmGlobal.add("(max-width: 768px)", () => {
+    // MOBILE ANIMATIONS (Simplified)
+
+    // 2. Image Reveal - Mobile (Just Fade, no Scale to avoid layout shift issues)
+    const revealImages = document.querySelectorAll('.wonder-card > img, .iguazu-falls > img, .intro-right img');
+    revealImages.forEach(img => {
+        gsap.from(img, {
             scrollTrigger: {
-                trigger: grid,
-                start: "top 80%"
+                trigger: img,
+                start: "top 85%"
             },
-            y: 50,
             opacity: 0,
             duration: 0.8,
-            stagger: 0.1,
-            ease: "power3.out"
+            ease: "power2.out"
         });
-    }
+    });
+
+    // 3. Grids - Mobile (Less Stagger, smaller Y movement)
+    const grids = document.querySelectorAll('.grid-gallery');
+    grids.forEach(grid => {
+        const items = grid.querySelectorAll('.grid-item, .dest-item');
+        if (items.length > 0) {
+            gsap.from(items, {
+                scrollTrigger: {
+                    trigger: grid,
+                    start: "top 80%"
+                },
+                y: 30, // Reduced movement
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.05, // Faster stagger
+                ease: "power3.out"
+            });
+        }
+    });
+});
+
+// Destination Grid & Editorial Content Animation (Whole Box Fade Up)
+const textBoxes = document.querySelectorAll('.dest-overlay, .ed-content');
+textBoxes.forEach(box => {
+    gsap.from(box, {
+        scrollTrigger: {
+            trigger: box,
+            start: "top 85%",
+            toggleActions: "play none none none"
+        },
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out"
+    });
 });
 
 // 4. Parallax Effect for Destination Titles (Big Text)
@@ -267,5 +337,25 @@ if (consultSection) {
         },
         y: 50,
         ease: "none"
+    });
+}
+
+// Navigation Toggle
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('nav ul');
+
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    const navLinksMobile = navMenu.querySelectorAll('a');
+    navLinksMobile.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
     });
 }

@@ -1761,7 +1761,7 @@ header nav ul li a,
 .footer-nav h4 a {
     position: relative;
     display: inline-block;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 header nav ul li a::after,

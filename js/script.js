@@ -359,3 +359,25 @@ if (hamburger && navMenu) {
         });
     });
 }
+
+// Scroll to Top Button Configuration
+const scrollBtn = document.createElement('button');
+scrollBtn.classList.add('btn-scroll-top');
+scrollBtn.innerHTML = '<img src="./svg/arrow.svg" alt="Up">';
+document.body.appendChild(scrollBtn);
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 1080) {
+        scrollBtn.classList.add('visible');
+    } else {
+        scrollBtn.classList.remove('visible');
+    }
+});
+
+scrollBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+

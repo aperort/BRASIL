@@ -183,7 +183,6 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            /* Fix vertical alignment */
             gap: 60px;
             list-style: none;
 
@@ -191,7 +190,6 @@ body {
                 display: flex;
                 align-items: center;
                 height: 100%;
-                /* Ensure full height if needed */
 
                 & a {
                     text-decoration: none;
@@ -202,7 +200,6 @@ body {
                     letter-spacing: 1px;
                     text-transform: uppercase;
                     display: flex;
-                    /* Flex here too */
                     align-items: center;
                     height: 100%;
                 }
@@ -217,7 +214,6 @@ body {
         padding-top: 200px;
         justify-content: center;
         margin: 0;
-        /* Using global font size of 400px */
         line-height: 1;
         z-index: 2;
     }
@@ -260,7 +256,6 @@ body {
 
     & h2 {
         margin-bottom: 15vh;
-        /* Space between title and image/content */
         line-height: 1.1;
 
         & .light-text {
@@ -598,7 +593,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Fix vertical alignment */
     gap: 60px;
     list-style: none;
 }
@@ -626,7 +620,6 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
-    /* Two rows: Title area, Details area */
     padding: 0 60px 100px 60px;
     gap: 60px;
     width: 100%;
@@ -699,7 +692,6 @@ footer {
 /* Contact Form Right Side */
 .contact-right {
     padding-top: 400px;
-    /* Align visually with where content starts or center */
     padding-left: 0;
     grid-column: 2;
     grid-row: 1 / span 2;
@@ -850,7 +842,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Fix vertical alignment */
     gap: 60px;
     list-style: none;
 }
@@ -952,13 +943,8 @@ footer {
     margin-bottom: 0 !important;
 }
 
-/* Responsive adjustments */
 
-
-
-
-
-
+/* Responsive */
 @keyframes scroll-left {
     from {
         transform: translateX(0);
@@ -1056,12 +1042,10 @@ footer {
     text-transform: uppercase;
     font-weight: 400;
     white-space: normal;
-    /* Allow wrapping if needed but mostly just show it */
     overflow: visible;
     font-size: clamp(6.25rem, -0.352rem + 21.127vw, 25rem);
 }
 
-/* Responsive Grid */
 .routes-grid {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -1079,7 +1063,6 @@ footer {
     justify-content: flex-start;
 }
 
-/* Typography matching the design */
 .route-col h2 {
     font-family: "Raleway", sans-serif;
     font-weight: 400;
@@ -1166,7 +1149,6 @@ footer {
     font-size: 16px;
     color: var(--dark);
     opacity: 0.6;
-    /* Slight transparency for lighter look */
     text-transform: capitalize;
     margin-top: 10px;
     text-align: right;
@@ -1240,10 +1222,21 @@ footer {
     padding-bottom: 50px;
 }
 
+
 .card-top h2 {
     color: var(--light);
     line-height: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
+.rating-star {
+    color: var(--light);
+    font-size: 0.8em;
+    vertical-align: middle;
+}
+
 
 .card-meta {
     list-style: none;
@@ -1313,8 +1306,6 @@ footer {
 }
 
 
-
-/* Custom Route Section */
 .custom-route-section {
     padding: 100px 60px;
     background-color: var(--light);
@@ -1379,8 +1370,6 @@ footer {
 }
 
 
-
-/* Destination Page Styles */
 .header-destination {
     padding: 30px 60px;
     width: 100%;
@@ -1391,7 +1380,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Fix vertical alignment */
     gap: 60px;
     list-style: none;
 }
@@ -1469,9 +1457,6 @@ footer {
     color: var(--dark);
     margin: 0;
 }
-
-/* Responsive */
-
 
 .destination-grid {
     display: grid;
@@ -1586,12 +1571,6 @@ footer {
     color: rgba(0, 0, 0, 0.4);
 }
 
-
-
-
-
-
-/* Editorial Clean Events Section */
 .events-editorial {
     display: flex;
     width: 100%;
@@ -1606,17 +1585,12 @@ footer {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* transition managed by GSAP */
     cursor: pointer;
     overflow: hidden;
     border-right: 1px solid var(--light);
-    /* Fine separation */
     will-change: flex;
 }
 
-
-
-/* Content Container - Solid White Sliding Panel */
 .ed-content {
     position: absolute;
     bottom: 0;
@@ -1630,7 +1604,6 @@ footer {
     justify-content: flex-end;
 }
 
-/* Header (Date + Title) */
 .ed-header {
     margin-bottom: 20px;
     border-bottom: 1px solid var(--light);
@@ -1663,15 +1636,10 @@ footer {
     color: var(--light);
     margin-bottom: 0;
     height: 0;
-    /* Hidden by default */
     opacity: 0;
     overflow: hidden;
-    /* transition managed by GSAP */
 }
 
-
-
-/* Keyword Highlighting */
 .ed-desc strong {
     color: #ffffff;
     font-weight: 900;
@@ -1688,14 +1656,9 @@ footer {
     text-transform: uppercase;
 }
 
-/* Responsive */
-
-
-/* Consult Experts Section */
 .consult-experts {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    /* More space for images */
     gap: 120px;
     align-items: center;
     margin-top: 220px;
@@ -1709,7 +1672,6 @@ footer {
 }
 
 .consult-img-back {
-    /* Image 2 (Small, Top Layer) */
     position: absolute;
     top: 0;
     left: 40px;
@@ -1721,7 +1683,6 @@ footer {
 }
 
 .consult-img-front {
-    /* Image 1 (Big, Bottom Layer) */
     position: absolute;
     bottom: 0;
     right: 0;
@@ -1751,8 +1712,6 @@ footer {
 }
 
 
-
-/* Shared Nav Link Animations */
 header nav ul li a,
 .footer-nav h4 a {
     position: relative;
@@ -1782,12 +1741,6 @@ header nav ul li a:hover,
     opacity: 0.8;
 }
 
-/* =========================================
-   RESPONSIVE STYLES
-   ========================================= */
-
-/* --- Overview Section (Header Content) --- */
-
 @media (max-width: 1600px) {
     .final-section img {
         margin-top: -200px;
@@ -1796,7 +1749,6 @@ header nav ul li a:hover,
 
 @media (max-width: 1200px) {
 
-    /* --- Events Editorial Section Responsive (Desktop Layout Breakpoint) --- */
     .events-editorial {
         display: flex;
         height: auto;
@@ -1809,7 +1761,6 @@ header nav ul li a:hover,
         height: 500px;
         width: 50%;
         min-width: 50%;
-        /* Force 2-column wrapping even when JS animates flex */
     }
 }
 
@@ -1834,7 +1785,6 @@ header nav ul li a:hover,
         flex-direction: column;
     }
 
-    /* Create the hero background image "cut" */
     .header-index::before {
         content: "";
         position: absolute;
@@ -1853,20 +1803,17 @@ header nav ul li a:hover,
         padding-bottom: 0;
         position: relative;
         z-index: 1002;
-        /* Ensure higher than header background pseudo-element and h1 */
     }
 
     .header-index h1 {
         position: relative;
         z-index: 2;
         height: 70vh;
-        /* Occupy the image area */
         display: flex;
         align-items: center;
         justify-content: center;
         padding-top: 0;
         margin-top: -80px;
-        /* Offset for nav to center visually */
     }
 
     .header-index .header-content {
@@ -1881,7 +1828,6 @@ header nav ul li a:hover,
         margin-top: 0;
     }
 
-    /* Reset text colors inside content since we are now on light bg */
     .header-index .header-content p,
     .header-index .header-content h4 {
         color: var(--dark);
@@ -1900,7 +1846,6 @@ header nav ul li a:hover,
         margin: 0 auto;
     }
 
-    /* --- Wonders Section (Responsive Cards) --- */
     .explore-wonders {
         padding: 50px 30px;
     }
@@ -1911,7 +1856,6 @@ header nav ul li a:hover,
         margin-bottom: 100px;
     }
 
-    /* Reset margin-top for reverse card, since we now stack vertically */
     .explore-wonders .wonder-card.reverse {
         margin-top: 0;
     }
@@ -1919,12 +1863,10 @@ header nav ul li a:hover,
     .explore-wonders .wonder-card>img {
         width: 100%;
         height: 60vh;
-        /* Maintain impact but fit screen */
         min-height: 400px;
         max-height: 600px;
     }
 
-    /* Reorder content for reverse card: Image first, then Text */
     .explore-wonders .wonder-card.reverse>img {
         order: -1;
     }
@@ -1936,19 +1878,15 @@ header nav ul li a:hover,
         text-align: center;
     }
 
-    /* Override specific text alignments */
     .explore-wonders .wonder-card .wonder-content h3 {
         margin-left: 0 !important;
         margin-right: 0 !important;
         text-align: center !important;
-        /* Force reduce gap between title and subtitle */
         margin-bottom: 50px !important;
     }
 
-    /* Fix specificity issue for reverse card alignment */
     .explore-wonders .wonder-card.reverse .wonder-content {
         align-items: center;
-        /* Override desktop flex-end */
     }
 
     .explore-wonders .wonder-card.reverse .wonder-content h3 {
@@ -1964,7 +1902,6 @@ header nav ul li a:hover,
     .explore-wonders .wonder-card.reverse .wonder-content p,
     .explore-wonders .wonder-card.reverse .wonder-content h4 {
         text-align: center !important;
-        /* Ensure the element itself is centered if width < 100% */
         align-self: center;
     }
 
@@ -1974,11 +1911,6 @@ header nav ul li a:hover,
         position: relative;
         display: flex;
         flex-direction: column-reverse;
-        /* Image bottom, Text top (or similar structure to others if needed, but original had text over image) */
-        /* Let's make it stack like others: Image then Text below, or Text above then Image.
-           Original design was Image full width with Text absolute over it.
-           For responsive easier read: Image, then Text block below it (or above).
-           Let's match the cards: Image, then Content below. */
         flex-direction: column;
         gap: 40px;
     }
@@ -2001,7 +1933,6 @@ header nav ul li a:hover,
 
     .explore-wonders .iguazu-falls .iguazu-content h3 {
         color: var(--dark);
-        /* Ensure visibility on white bg */
         margin-bottom: 30px;
     }
 
@@ -2010,38 +1941,28 @@ header nav ul li a:hover,
         margin: 0 auto;
     }
 
-    /* --- Connect Routes Section --- */
     .connect-routes {
         padding: 50px 30px;
     }
 
     .connect-routes h2 {
         text-align: left;
-        /* Align to the left like Explore Wonders */
         margin-bottom: 60px;
-        /* Adjust size for mobile */
     }
 
-    /* Responsive Grid */
     .connect-routes .grid-gallery {
         display: grid;
         grid-template-columns: 1fr;
-        /* Single column stack */
         grid-template-rows: auto;
-        /* Allow auto scaling */
         gap: 20px;
         height: auto;
     }
 
     .connect-routes .grid-gallery .grid-item {
         height: 300px;
-        /* Uniform height */
         grid-column: auto !important;
-        /* Reset grid positioning */
         grid-row: auto !important;
     }
-
-    /* Fix for tall images: Give them more height so they aren't cut off */
     .connect-routes .grid-gallery .grid-item.grid-img-3,
     .connect-routes .grid-gallery .grid-item.grid-img-4 {
         height: 550px;
@@ -2055,7 +1976,6 @@ header nav ul li a:hover,
         }
     }
 
-    /* --- Destination Page Responsive --- */
     .destination-container {
         padding: 0 30px 100px 30px;
     }
@@ -2082,7 +2002,6 @@ header nav ul li a:hover,
         gap: 30px;
     }
 
-    /* Reset grid placements for single column */
     .item-1,
     .item-2,
     .item-3,
@@ -2094,7 +2013,6 @@ header nav ul li a:hover,
         grid-row: auto;
     }
 
-    /* Specific adjustments for items that were spanning */
     .item-1 {
         height: 600px;
     }
@@ -2107,7 +2025,6 @@ header nav ul li a:hover,
         height: 600px !important;
     }
 
-    /* Adjust overlay position */
     .dest-overlay {
         left: 50%;
         transform: translateX(-50%);
@@ -2116,22 +2033,16 @@ header nav ul li a:hover,
         text-align: center;
     }
 
-    /* --- Consult Experts Section (Tablet Adjustment) --- */
     .consult-experts {
-        /* Keep grid but reduce gap */
         gap: 60px;
         margin-top: 150px;
         padding: 0 40px;
         grid-template-columns: 1fr 1fr;
-        /* Maintain horizontal */
     }
 
     .consult-images {
         height: 500px;
-        /* Slightly smaller height */
     }
-
-    /* Routes responsive moved to 1300px query */
 
     .routes-stats {
         padding: 80px 30px;
@@ -2154,7 +2065,6 @@ header nav ul li a:hover,
         text-align: center;
     }
 
-    /* Itineraries */
     .itineraries-section {
         padding: 20px 30px 40px 30px;
     }
@@ -2231,7 +2141,6 @@ header nav ul li a:hover,
         text-align: center;
     }
 
-    /* --- Custom Route Section (Routes Page) --- */
     .custom-route-section {
         padding: 50px 30px;
     }
@@ -2282,7 +2191,6 @@ header nav ul li a:hover,
 
 @media (max-width: 1024px) {
 
-    /* --- Footer --- */
     footer {
         padding: 80px 40px;
     }
@@ -2320,7 +2228,6 @@ header nav ul li a:hover,
 
     footer .footer-bottom {
         flex-direction: column-reverse;
-        /* Put links above copyright or just stack */
         gap: 30px;
         text-align: center;
     }
@@ -2341,12 +2248,10 @@ header nav ul li a:hover,
     }
 }
 
-/* --- Contact Page Responsive --- */
 @media (max-width: 1024px) {
     .contact-main {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        /* Reset explicit rows */
         padding: 0 30px 60px 30px;
         gap: 60px;
     }
@@ -2362,12 +2267,6 @@ header nav ul li a:hover,
 
     .contact-right {
         padding-top: 0;
-        /* Ensure form comes after title but before details or after? 
-           Based on HTML order: Title (Left) -> Form (Right) -> Details (Details div is after form in old HTML, wait)
-           Wait, in the NEW HTML I wrote in step 381:
-           Left (Title) -> Right (Form) -> Details.
-           So natural stack is correct: Title -> Form -> Details.
-        */
     }
 
     .form-row {
@@ -2376,7 +2275,6 @@ header nav ul li a:hover,
     }
 
     .contact-title {
-        /* Smaller but still big */
         margin-left: 0;
         line-height: 0.8;
     }
@@ -2403,52 +2301,42 @@ header nav ul li a:hover,
     }
 }
 
-/* --- Responsive Navigation --- */
 .hamburger {
     display: none;
     flex-direction: column;
     justify-content: center;
     gap: 6px;
-    /* Explicit gap */
     width: 40px;
-    /* Slightly wider click area */
     height: 40px;
     cursor: pointer;
     z-index: 1001;
     position: relative;
     padding: 10px 5px;
-    /* Click area padding */
     margin-right: 0;
 }
 
 .hamburger span {
     display: block;
     height: 2px;
-    /* Thinner elegant lines */
     width: 100%;
     background-color: var(--dark);
     border-radius: 4px;
     transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-    /* Bouncy transition */
     transform-origin: center;
 }
 
-/* Index header has dark background image, so light hamburger */
 .header-index .hamburger span {
     background-color: var(--light);
 }
 
-/* Active State for Hamburger (X shape) */
 .hamburger.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
     background-color: var(--dark);
-    /* Force dark on active (menu is light) */
 }
 
 .hamburger.active span:nth-child(2) {
     opacity: 0;
     transform: translateX(-10px);
-    /* Slide out effect */
 }
 
 .hamburger.active span:nth-child(3) {
@@ -2467,12 +2355,9 @@ header nav ul li a:hover,
     .header-contact nav {
         display: flex;
         justify-content: flex-end;
-        /* Push hamburger to right */
         align-items: center;
         width: 100%;
     }
-
-    /* Mobile Menu Overlay */
     .header-index nav ul,
     .header-destination nav ul,
     .header-routes nav ul,
@@ -2483,7 +2368,6 @@ header nav ul li a:hover,
         width: 100%;
         height: 100vh;
         background-color: rgba(238, 240, 230, 0.98);
-        /* Slight transparency */
         backdrop-filter: blur(10px);
         flex-direction: column;
         justify-content: center;
@@ -2494,7 +2378,6 @@ header nav ul li a:hover,
         transition: opacity 0.4s ease, visibility 0.4s ease;
         z-index: 1000;
         transform: none;
-        /* No slide, using fade for elegance */
         padding: 0;
         margin: 0;
     }
@@ -2509,8 +2392,6 @@ header nav ul li a:hover,
         transform: none;
     }
 
-    /* Mobile Links */
-    /* Reset list item styles for mobile */
     .header-index nav ul li,
     .header-destination nav ul li,
     .header-routes nav ul li,
@@ -2518,7 +2399,6 @@ header nav ul li a:hover,
         height: auto;
     }
 
-    /* Mobile Links */
     .header-index nav ul li a,
     .header-destination nav ul li a,
     .header-routes nav ul li a,
@@ -2549,7 +2429,6 @@ header nav ul li a:hover,
     }
 }
 
-/* --- Stats and Layout Adjustments (Wider support) --- */
 @media (max-width: 1300px) {
     .routes-stats {
         display: grid;
@@ -2564,7 +2443,6 @@ header nav ul li a:hover,
         text-align: center;
         width: 100%;
         flex: none;
-        /* Override flex if inherited */
     }
 
 
@@ -2573,19 +2451,15 @@ header nav ul li a:hover,
         text-align: center;
     }
 
-    /* Moved from 1024px: Trigger grid earlier (1300px) */
     .routes-container {
         padding: 0 30px 100px 30px;
     }
-
-    /* Change to 2-column + Top Hero Grid */
     .routes-grid {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
         align-items: start;
     }
 
-    /* Center (Image) goes to top full width */
     .route-col.center {
         grid-column: 1 / -1;
         grid-row: 1;
@@ -2595,11 +2469,9 @@ header nav ul li a:hover,
 
     .route-col.center img {
         max-width: 80%;
-        /* Controlled width */
         margin: 0 auto;
     }
 
-    /* Side columns sit below */
     .route-col.left,
     .route-col.right {
         grid-row: 2;
@@ -2616,7 +2488,6 @@ header nav ul li a:hover,
     .route-col.left .route-img-wrapper,
     .route-col.right .route-img-wrapper {
         margin-top: 40px;
-        /* Reset huge margin */
         margin-left: 0;
     }
 
@@ -2627,7 +2498,6 @@ header nav ul li a:hover,
 
 @media (max-width: 768px) {
 
-    /* Full stack on smaller screens */
     .routes-grid {
         grid-template-columns: 1fr;
     }
@@ -2640,7 +2510,6 @@ header nav ul li a:hover,
     .route-col.right {
         padding: 0;
         grid-row: auto;
-        /* Reset explicit row */
     }
 }
 
@@ -2648,4 +2517,43 @@ header nav ul li a:hover,
     .routes-stats {
         grid-template-columns: 1fr;
     }
+}
+
+.btn-scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--dark);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-scroll-top.visible {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+.btn-scroll-top:hover {
+    background-color: #333;
+    transform: translateY(-5px);
+}
+
+.btn-scroll-top img {
+    width: 14px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    transform: rotate(-90deg);
 }

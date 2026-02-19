@@ -227,7 +227,7 @@ body {
         padding-bottom: 20px;
         color: var(--dark);
 
-        & .description-left {
+        & .izquierda {
             text-align: left;
             max-width: 700px;
             line-height: 1.6;
@@ -241,7 +241,7 @@ body {
             color: var(--dark);
         }
 
-        & .description-right {
+        & .derecha {
             text-align: right;
             max-width: 700px;
             justify-self: end;
@@ -250,7 +250,7 @@ body {
     }
 }
 
-.explore-wonders {
+.home-primera-seccion {
     padding: 100px 60px;
     color: var(--dark);
 
@@ -263,7 +263,7 @@ body {
         }
     }
 
-    & .wonder-card {
+    & .home-primera-seccion-card {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 60px;
@@ -325,7 +325,7 @@ body {
         }
     }
 
-    & .iguazu-falls {
+    & .home-segunda-seccion {
         margin-top: 150px;
         position: relative;
         text-align: center;
@@ -358,7 +358,7 @@ body {
     }
 }
 
-.connect-routes {
+.grid-lugares {
     padding: 100px 60px;
     color: var(--dark);
 
@@ -620,7 +620,7 @@ footer {
 
 
 
-.contact-main {
+.contact-principal {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
@@ -632,7 +632,7 @@ footer {
     align-items: start;
 }
 
-.contact-left {
+.contact-izquierda {
     display: flex;
     flex-direction: column;
     min-width: 0;
@@ -693,7 +693,7 @@ footer {
     height: auto;
 }
 
-.contact-right {
+.contact-derecha {
     padding-top: 400px;
     padding-left: 0;
     grid-column: 2;
@@ -859,14 +859,14 @@ footer {
     text-transform: uppercase;
 }
 
-.routes-container {
+.routes-contenedor {
     padding: 0 60px 100px 60px;
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
 }
 
-.routes-title {
+.routes-titulo {
     text-align: center;
 }
 
@@ -877,17 +877,17 @@ footer {
     align-items: start;
 }
 
-.route-col {
+.columna {
     display: flex;
     flex-direction: column;
 }
 
-.route-col.center {
+.columna.center {
     align-items: center;
     justify-content: flex-start;
 }
 
-.route-col h2 {
+.columna h2 {
     font-family: "Raleway", sans-serif;
     font-weight: 400;
     font-size: 42px;
@@ -896,7 +896,7 @@ footer {
     line-height: 1.1;
 }
 
-.route-col p {
+.columna p {
     font-family: "Lato", sans-serif;
     font-size: 18px;
     line-height: 1.6;
@@ -904,7 +904,7 @@ footer {
     margin-bottom: 40px;
 }
 
-.route-col p strong {
+.columna p strong {
     font-weight: 700;
 }
 
@@ -921,7 +921,7 @@ footer {
     border-radius: 8px;
 }
 
-.route-col.center img {
+.columna.center img {
     display: block;
     max-width: 100%;
     height: auto;
@@ -929,11 +929,11 @@ footer {
 }
 
 
-.route-col.left .route-img-wrapper {
+.columna.left .route-img-wrapper {
     margin-top: 80px;
 }
 
-.route-col.right .route-img-wrapper {
+.columna.right .route-img-wrapper {
     margin-top: 250px;
     margin-left: 50px;
 }
@@ -1026,14 +1026,14 @@ footer {
     align-items: center;
 }
 
-.routes-container {
+.routes-contenedor {
     padding: 0 60px 100px 60px;
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
 }
 
-.routes-title {
+.routes-titulo {
     text-align: center;
     line-height: 0.8;
     margin: 0;
@@ -1053,17 +1053,17 @@ footer {
     align-items: start;
 }
 
-.route-col {
+.columna {
     display: flex;
     flex-direction: column;
 }
 
-.route-col.center {
+.columna.center {
     align-items: center;
     justify-content: flex-start;
 }
 
-.route-col h2 {
+.columna h2 {
     font-family: "Raleway", sans-serif;
     font-weight: 400;
     font-size: 42px;
@@ -1072,7 +1072,7 @@ footer {
     line-height: 1.1;
 }
 
-.route-col p {
+.columna p {
     font-family: "Lato", sans-serif;
     font-size: 18px;
     line-height: 1.6;
@@ -1080,7 +1080,7 @@ footer {
     margin-bottom: 40px;
 }
 
-.route-col p strong {
+.columna p strong {
     font-weight: 700;
 }
 
@@ -1097,7 +1097,7 @@ footer {
     border-radius: 8px;
 }
 
-.route-col.center img {
+.columna.center img {
     display: block;
     max-width: 100%;
     height: auto;
@@ -1105,11 +1105,11 @@ footer {
 }
 
 
-.route-col.left .route-img-wrapper {
+.columna.left .route-img-wrapper {
     margin-top: 80px;
 }
 
-.route-col.right .route-img-wrapper {
+.columna.right .route-img-wrapper {
     margin-top: 250px;
     margin-left: 50px;
 }
@@ -1123,7 +1123,7 @@ footer {
 
 
 /* Stats */
-.routes-stats {
+.routes-estadisticas {
     display: flex;
     justify-content: space-between;
     padding: 150px 100px 50px 100px;
@@ -1157,7 +1157,7 @@ footer {
 
 
 /* Itineraries */
-.itineraries-section {
+.section-itinerarios {
     padding: 20px 60px 40px 60px;
     background-color: var(--light);
 }
@@ -1408,7 +1408,7 @@ footer {
     overflow-x: hidden;
 }
 
-.destination-title {
+.destination-titulo {
     text-align: center;
     line-height: 0.8;
     margin: 0;
@@ -1423,7 +1423,7 @@ footer {
     font-size: clamp(6.25rem, -0.352rem + 21.127vw, 25rem);
 }
 
-.destination-intro-grid {
+.destination-subtitulo-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
@@ -1442,7 +1442,7 @@ footer {
     font-weight: 700;
 }
 
-.intro-right {
+.intro-derecha {
     padding-top: 10px;
     display: flex;
     flex-direction: column;
@@ -1450,7 +1450,7 @@ footer {
     align-items: flex-start;
 }
 
-.intro-right p {
+.intro-derecha p {
     font-family: "Lato", sans-serif;
     font-size: 20px;
     line-height: 1.6;
@@ -1571,7 +1571,7 @@ footer {
     color: rgba(0, 0, 0, 0.4);
 }
 
-.events-editorial {
+.cards-fiestas {
     display: flex;
     width: 100%;
     height: 700px;
@@ -1656,7 +1656,7 @@ footer {
     text-transform: uppercase;
 }
 
-.consult-experts {
+.destination-section-final {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 120px;
@@ -1749,7 +1749,7 @@ header nav ul li a:hover,
 
 @media (max-width: 1200px) {
 
-    .events-editorial {
+    .cards-fiestas {
         display: flex;
         height: auto;
         flex-wrap: wrap;
@@ -1838,74 +1838,74 @@ header nav ul li a:hover,
         margin-bottom: 20px;
     }
 
-    .header-index .header-content .description-left,
-    .header-index .header-content .description-right {
+    .header-index .header-content .izquierda,
+    .header-index .header-content .derecha {
         text-align: center;
         max-width: 100%;
         justify-self: center;
         margin: 0 auto;
     }
 
-    .explore-wonders {
+    .home-primera-seccion {
         padding: 50px 30px;
     }
 
-    .explore-wonders .wonder-card {
+    .home-primera-seccion .home-primera-seccion-card {
         grid-template-columns: 1fr;
         gap: 50px;
         margin-bottom: 100px;
     }
 
-    .explore-wonders .wonder-card.reverse {
+    .home-primera-seccion .home-primera-seccion-card.reverse {
         margin-top: 0;
     }
 
-    .explore-wonders .wonder-card>img {
+    .home-primera-seccion .home-primera-seccion-card>img {
         width: 100%;
         height: 60vh;
         min-height: 400px;
         max-height: 600px;
     }
 
-    .explore-wonders .wonder-card.reverse>img {
+    .home-primera-seccion .home-primera-seccion-card.reverse>img {
         order: -1;
     }
 
-    .explore-wonders .wonder-content {
+    .home-primera-seccion .wonder-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
-    .explore-wonders .wonder-card .wonder-content h3 {
+    .home-primera-seccion .home-primera-seccion-card .wonder-content h3 {
         margin-left: 0 !important;
         margin-right: 0 !important;
         text-align: center !important;
         margin-bottom: 50px !important;
     }
 
-    .explore-wonders .wonder-card.reverse .wonder-content {
+    .home-primera-seccion .home-primera-seccion-card.reverse .wonder-content {
         align-items: center;
     }
 
-    .explore-wonders .wonder-card.reverse .wonder-content h3 {
+    .home-primera-seccion .home-primera-seccion-card.reverse .wonder-content h3 {
         align-self: center;
         margin-bottom: 50px;
     }
 
-    .explore-wonders .wonder-content h4,
-    .explore-wonders .wonder-content p {
+    .home-primera-seccion .wonder-content h4,
+    .home-primera-seccion .wonder-content p {
         text-align: center !important;
     }
 
-    .explore-wonders .wonder-card.reverse .wonder-content p,
-    .explore-wonders .wonder-card.reverse .wonder-content h4 {
+    .home-primera-seccion .home-primera-seccion-card.reverse .wonder-content p,
+    .home-primera-seccion .home-primera-seccion-card.reverse .wonder-content h4 {
         text-align: center !important;
         align-self: center;
     }
 
-    .explore-wonders .iguazu-falls {
+    .home-primera-seccion .home-segunda-seccion {
         margin-top: 50px;
         margin-bottom: 100px;
         position: relative;
@@ -1915,13 +1915,13 @@ header nav ul li a:hover,
         gap: 40px;
     }
 
-    .explore-wonders .iguazu-falls>img {
+    .home-primera-seccion .home-segunda-seccion>img {
         height: 50vh;
         min-height: 400px;
         object-fit: cover;
     }
 
-    .explore-wonders .iguazu-falls .iguazu-content {
+    .home-primera-seccion .home-segunda-seccion .iguazu-content {
         position: relative;
         top: 0;
         left: 0;
@@ -1931,26 +1931,26 @@ header nav ul li a:hover,
         padding: 0 20px;
     }
 
-    .explore-wonders .iguazu-falls .iguazu-content h3 {
+    .home-primera-seccion .home-segunda-seccion .iguazu-content h3 {
         color: var(--dark);
         margin-bottom: 30px;
     }
 
-    .explore-wonders .iguazu-falls .iguazu-content p {
+    .home-primera-seccion .home-segunda-seccion .iguazu-content p {
         color: var(--dark);
         margin: 0 auto;
     }
 
-    .connect-routes {
+    .grid-lugares {
         padding: 50px 30px;
     }
 
-    .connect-routes h2 {
+    .grid-lugares h2 {
         text-align: left;
         margin-bottom: 60px;
     }
 
-    .connect-routes .grid-gallery {
+    .grid-lugares .grid-gallery {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
@@ -1958,13 +1958,13 @@ header nav ul li a:hover,
         height: auto;
     }
 
-    .connect-routes .grid-gallery .grid-item {
+    .grid-lugares .grid-gallery .grid-item {
         height: 300px;
         grid-column: auto !important;
         grid-row: auto !important;
     }
-    .connect-routes .grid-gallery .grid-item.grid-img-3,
-    .connect-routes .grid-gallery .grid-item.grid-img-4 {
+    .grid-lugares .grid-gallery .grid-item.grid-img-3,
+    .grid-lugares .grid-gallery .grid-item.grid-img-4 {
         height: 550px;
     }
 
@@ -1980,17 +1980,17 @@ header nav ul li a:hover,
         padding: 0 30px 100px 30px;
     }
 
-    .destination-intro-grid {
+    .destination-subtitulo-grid {
         grid-template-columns: 1fr;
         gap: 60px;
         margin-bottom: 80px;
     }
 
-    .destination-intro-grid .intro-left h2 {
+    .destination-subtitulo-grid .intro-left h2 {
         text-align: left;
     }
 
-    .destination-intro-grid .intro-right {
+    .destination-subtitulo-grid .intro-derecha {
         align-items: center;
         text-align: center;
     }
@@ -2033,7 +2033,7 @@ header nav ul li a:hover,
         text-align: center;
     }
 
-    .consult-experts {
+    .destination-section-final {
         gap: 60px;
         margin-top: 150px;
         padding: 0 40px;
@@ -2044,7 +2044,7 @@ header nav ul li a:hover,
         height: 500px;
     }
 
-    .routes-stats {
+    .routes-estadisticas {
         padding: 80px 30px;
         flex-wrap: wrap;
         gap: 40px;
@@ -2065,7 +2065,7 @@ header nav ul li a:hover,
         text-align: center;
     }
 
-    .itineraries-section {
+    .section-itinerarios {
         padding: 20px 30px 40px 30px;
     }
 
@@ -2101,7 +2101,7 @@ header nav ul li a:hover,
 }
 
 @media (max-width: 900px) {
-    .consult-experts {
+    .destination-section-final {
         display: flex;
         flex-direction: column;
         gap: 60px;
@@ -2249,15 +2249,15 @@ header nav ul li a:hover,
 }
 
 @media (max-width: 1024px) {
-    .contact-main {
+    .contact-principal {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         padding: 0 30px 60px 30px;
         gap: 60px;
     }
 
-    .contact-left,
-    .contact-right,
+    .contact-izquierda,
+    .contact-derecha,
     .contact-details {
         grid-column: auto;
         grid-row: auto;
@@ -2265,7 +2265,7 @@ header nav ul li a:hover,
         margin: 0;
     }
 
-    .contact-right {
+    .contact-derecha {
         padding-top: 0;
     }
 
@@ -2430,7 +2430,7 @@ header nav ul li a:hover,
 }
 
 @media (max-width: 1300px) {
-    .routes-stats {
+    .routes-estadisticas {
         display: grid;
         grid-template-columns: 1fr 1fr;
         padding: 80px 30px;
@@ -2451,7 +2451,7 @@ header nav ul li a:hover,
         text-align: center;
     }
 
-    .routes-container {
+    .routes-contenedor {
         padding: 0 30px 100px 30px;
     }
     .routes-grid {
@@ -2460,38 +2460,38 @@ header nav ul li a:hover,
         align-items: start;
     }
 
-    .route-col.center {
+    .columna.center {
         grid-column: 1 / -1;
         grid-row: 1;
         margin-bottom: 60px;
         align-items: center;
     }
 
-    .route-col.center img {
+    .columna.center img {
         max-width: 80%;
         margin: 0 auto;
     }
 
-    .route-col.left,
-    .route-col.right {
+    .columna.left,
+    .columna.right {
         grid-row: 2;
     }
 
-    .route-col.left {
+    .columna.left {
         padding-right: 20px;
     }
 
-    .route-col.right {
+    .columna.right {
         padding-left: 20px;
     }
 
-    .route-col.left .route-img-wrapper,
-    .route-col.right .route-img-wrapper {
+    .columna.left .route-img-wrapper,
+    .columna.right .route-img-wrapper {
         margin-top: 40px;
         margin-left: 0;
     }
 
-    .route-col h2 {
+    .columna h2 {
         text-align: center;
     }
 }
@@ -2502,19 +2502,19 @@ header nav ul li a:hover,
         grid-template-columns: 1fr;
     }
 
-    .route-col.center img {
+    .columna.center img {
         max-width: 100%;
     }
 
-    .route-col.left,
-    .route-col.right {
+    .columna.left,
+    .columna.right {
         padding: 0;
         grid-row: auto;
     }
 }
 
 @media (max-width: 600px) {
-    .routes-stats {
+    .routes-estadisticas {
         grid-template-columns: 1fr;
     }
 }
@@ -2560,7 +2560,7 @@ header nav ul li a:hover,
 
 @media (max-width: 768px) {
 
-    .events-editorial {
+    .cards-fiestas {
         flex-direction: column;
         height: auto;
         margin-top: 40px;

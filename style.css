@@ -417,6 +417,10 @@ body {
         & .grid-img-3 {
             grid-column: 3;
             grid-row: 1 / span 2;
+
+            & img {
+                object-position: top;
+            }
         }
 
         & .grid-img-4 {
@@ -1716,7 +1720,7 @@ header nav ul li a,
 .footer-nav h4 a {
     position: relative;
     display: inline-block;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 header nav ul li a::after,
@@ -2556,4 +2560,86 @@ header nav ul li a:hover,
     height: auto;
     filter: brightness(0) invert(1);
     transform: rotate(-90deg);
+}
+
+@media (max-width: 768px) {
+
+    /* Events Editorial - Text Only on Black Background */
+    .events-editorial {
+        flex-direction: column;
+        height: auto;
+        margin-top: 40px;
+    }
+
+    .ed-card {
+        width: 100%;
+        height: 400px;
+        min-height: 400px;
+        display: flex;
+        /* Flexbox for connection */
+        flex-direction: column;
+        justify-content: flex-end;
+        /* Initially bottom aligned */
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        background-size: cover;
+        background-position: center;
+        background-color: #000000;
+        /* Base color black to prevent any white flash */
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Black Overlay for Smooth Transition */
+    .ed-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000000;
+        opacity: 0;
+        z-index: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .ed-card:hover::before {
+        opacity: 1;
+    }
+
+    .ed-card:hover {
+        /* No removing background-image, just overlaying it */
+        justify-content: center;
+        /* Center text vertically */
+    }
+
+    .ed-content {
+        position: relative;
+        z-index: 2;
+        /* Above the black overlay */
+        width: 100%;
+        height: auto;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+        /* Readability gradient */
+        padding: 30px;
+        transition: all 0.3s ease;
+    }
+
+    .ed-card:hover .ed-content {
+        background: transparent;
+        padding-bottom: 30px;
+    }
+
+    .ed-desc {
+        /* Base styles are height:0, opacity:0 */
+    }
+
+    .ed-card:hover .ed-desc {
+        height: auto !important;
+        opacity: 1 !important;
+        margin-top: 20px;
+        visibility: visible !important;
+        display: block;
+    }
 }
